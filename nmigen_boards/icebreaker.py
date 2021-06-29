@@ -63,7 +63,7 @@ class ICEBreakerPlatform(LatticeICE40Platform):
     ]
 
     def toolchain_program(self, products, name):
-        iceprog = os.environ.get("ICEPROG", "iceprog")
+        iceprog = os.environ.get("ICEPROG", "iceprog.exe")
         with products.extract("{}.bin".format(name)) as bitstream_filename:
             subprocess.check_call([iceprog, bitstream_filename])
 
